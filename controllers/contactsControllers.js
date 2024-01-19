@@ -1,6 +1,11 @@
 import contactsService from "../services/contactsServices.js";
+// import express from "express";
 
-export const getAllContacts = (req, res) => {};
+// const router = express.Router();
+export const getAllContacts = async (req, res) => {
+    const result = await contactsService.listContacts();
+    res.json(result);
+};
 
 export const getOneContact = (req, res) => {};
 
