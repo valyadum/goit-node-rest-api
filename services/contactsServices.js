@@ -9,7 +9,7 @@ import { nanoid } from "nanoid";
 
 // const contactsPath = path.join(__dirname, 'db', 'contacts.json');
 
-const contactsPath = path.resolve('../db/contacts.json');
+const contactsPath = path.resolve('db', 'contacts.json');
 
 async function listContacts() {
     const data = await fs.readFile(contactsPath);
@@ -53,9 +53,22 @@ async function addContact({ name, email, phone }) {
     return newContact;
     // ...твій код. Повертає об'єкт доданого контакту (з id).
 }
-export default  {
+async function updateContact(id, data) {
+    const contacts = await listContacts();
+    const index = contacts.findIndex(item => item.id === id);
+    if (index === -1) {
+        return null
+    }
+    contacts[index] = { id, ...data}
+    await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+    return contacts[index];
+}
+
+
+export default {
     listContacts,
     getContactById,
     removeContact,
-    addContact
+    addContact,
+    updateContact
 }
