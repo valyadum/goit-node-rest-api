@@ -1,14 +1,10 @@
-
-// import HttpError from "../helpers/HttpError.js";
-
-import HttpError from "../helpers/HttpError.js";
-import { User } from "../models/users.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import 'dotenv/config';
+import { HttpError } from "../helpers/HttpError.js";
+import { User } from "../models/users.js";
 
 const { SECRET_KEY } = process.env;
-
 
 export const register = async (req, res, next) => {
     try {
@@ -63,9 +59,9 @@ export const login = async (req, res, next) => {
 export const getCurrent = async (req, res, next) => {
     try {
         const { email, subscription } = req.user;
-        res.json({  
-                email,
-                subscription,
+        res.json({
+            email,
+            subscription,
         })
     } catch (error) {
         next(error)
@@ -76,8 +72,8 @@ export const logout = async (req, res, next) => {
         const { _id } = req.user;
         await User.findOneAndUpdate(_id, { token: '' });
         throw HttpError(204);
-       
-        
+
+
     } catch (error) {
         next(error)
     }

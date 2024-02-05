@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import { app } from "./app.js";
 import 'dotenv/config';
+import { app } from "./app.js";
 
 const { DB_HOST, PORT = 3000 } = process.env;
 

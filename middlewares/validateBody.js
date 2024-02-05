@@ -1,6 +1,6 @@
-import  HttpError  from "../helpers/HttpError.js";
+import  {HttpError}  from "../helpers/HttpError.js";
 
-const validateBody = (schema) => {
+export const validateBody = (schema) => {
   const func = (req, _, next) => {
     
     const fieldsQty = Object.keys(req.body).length;
@@ -17,4 +17,4 @@ const validateBody = (schema) => {
   return func;
 };
 
-export default validateBody;
+

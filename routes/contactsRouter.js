@@ -12,7 +12,7 @@ import {
   updateContactSchema,
   updateFavoriteSchema,
 } from "../schemas/contactsSchemas.js";
-import validateBody from "../middlewares/validateBody.js";
+import {validateBody} from "../middlewares/validateBody.js";
 import { isValidId } from "../middlewares/isValidId.js";
 import { authenticate } from "../middlewares/authenticate.js";
 
@@ -30,4 +30,4 @@ contactsRouter.put("/:id", authenticate, validateBody(updateContactSchema), isVa
 
 contactsRouter.patch("/:id/favorite", authenticate, validateBody(updateFavoriteSchema), isValidId, updateFavorite);
 
-export default contactsRouter;
+export  {contactsRouter};

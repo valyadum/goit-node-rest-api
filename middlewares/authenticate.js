@@ -1,7 +1,7 @@
-import HttpError from "../helpers/HttpError.js";
 import jwt from "jsonwebtoken";
 import 'dotenv/config';
 import {User} from "../models/users.js"
+import {HttpError} from "../helpers/HttpError.js";
 
 const { SECRET_KEY } = process.env;
 
