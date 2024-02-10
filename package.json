@@ -1,6 +1,7 @@
 {
   "name": "goit-node-rest-api",
   "scripts": {
+    "test": "jest",
     "start": "node ./server.js",
     "dev": "nodemon ./server.js"
   },
@@ -17,9 +18,11 @@
     "mongoose": "^8.1.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
-    "nanoid": "^5.0.4"
+    "nanoid": "^5.0.4",
+    "supertest": "^6.3.4"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "nodemon": "^3.0.3"
   }
 }
