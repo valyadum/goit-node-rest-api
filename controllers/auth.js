@@ -91,6 +91,9 @@ export const logout = async (req, res, next) => {
 export const updateAvatar = async (req, res, next) => {
     try {
         const { _id } = req.user;
+        if (!req.file) {
+            throw HttpError(400, "Please add your file");
+        }
         const { path: tempUpload, originalname } = req.file;
         const filename = `${_id}_${originalname}`;
 
