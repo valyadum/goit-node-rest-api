@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install
+RUN npm i bcryptjs
 
 EXPOSE 3000
 
