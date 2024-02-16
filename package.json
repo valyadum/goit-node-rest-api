@@ -2,7 +2,7 @@
   "name": "goit-node-rest-api",
   "scripts": {
     "test": "jest",
-    "start": "node ./server.js",
+    "start": "node ./sendEmail.js",
     "dev": "nodemon ./server.js"
   },
   "type": "module",
@@ -19,6 +19,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nanoid": "^5.0.4",
+    "nodemailer": "^6.9.9",
     "supertest": "^6.3.4"
   },
   "devDependencies": {
