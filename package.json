@@ -1,18 +1,29 @@
 {
   "name": "goit-node-rest-api",
   "scripts": {
-    "start": "node ./app.js",
-    "dev": "nodemon ./app.js"
+    "test": "jest",
+    "start": "node ./sendEmail.js",
+    "dev": "nodemon ./server.js"
   },
   "type": "module",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
     "express": "^4.18.2",
+    "gravatar": "^1.8.2",
+    "jimp": "^0.22.10",
     "joi": "^17.12.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1",
     "morgan": "^1.10.0",
-    "nanoid": "^5.0.4"
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^5.0.4",
+    "nodemailer": "^6.9.9",
+    "supertest": "^6.3.4"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.3"
   }
 }
